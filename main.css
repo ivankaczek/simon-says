@@ -1,0 +1,156 @@
+.hidden {
+    display: none;
+}
+
+body {
+    background: #d9e1d5;
+}
+
+h3 {
+    font-size: 30px;
+    color: #30322f;
+}
+
+#horas {
+    color: #30322f;
+}
+
+.oculto {
+    display: none;
+}
+
+.resultados-ocultos {
+    display: none;
+}
+
+.button01 {
+display: inline;
+
+    background: #07a3f7;
+    color: #fff;
+  
+    border: none;
+    border-radius: 3px;
+  
+    width: 300px;
+    height: 300px;
+    
+    font-size: 18px;
+  
+    padding: 15px 25px;
+}
+  
+.button01:hover{
+   background: #05a4fa;
+   transition: 0.8s background;
+   border: black 10px solid;
+}
+
+.button02 {
+    background: #2cb813;
+    color: #fff;
+  
+    border: none;
+    border-radius: 3px;
+  
+    width: 300px;
+    height: 300px;
+    
+    font-size: 18px;
+  
+    padding: 15px 25px;
+}
+  
+.button02:hover{
+   background: #72f005;
+   transition: 0.2s background;
+   border: black 10px solid;
+}
+
+
+.button03 {
+    background: #a64a23;
+    color: #fff;
+  
+    border: none;
+    border-radius: 3px;
+  
+    width: 300px;
+    height: 300px;
+    
+    font-size: 18px;
+  
+    padding: 15px 25px;
+}
+  
+.button03:hover{
+   background: #f43303;
+   transition: 0.3s background;
+   border: black 10px solid;
+}
+
+.button04 {
+    background: #c7b813;
+    color: #fff;
+  
+    border: none;
+    border-radius: 3px;
+  
+    width: 300px;
+    height: 300px;
+    
+    font-size: 18px;
+  
+    padding: 15px 25px;
+}
+  
+.button04:hover{
+   background: #ffe203;
+   transition: 0.3s background;
+   border: black 10px solid;
+}
+
+.selected {
+    border: black 10px solid;
+    width: 300px;
+    height: 300px;
+}
+
+.block {
+    display: block;
+    width: 50%;
+    border: none;
+    background-color: #0fe093;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .block:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .block02 {
+    display: block;
+    width: 50%;
+    border: none;
+    background-color: #a53a24;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .block:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+ .block , .bloc02 {
+    display:inline-block;
+   
+    }
