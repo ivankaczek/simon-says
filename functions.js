@@ -2,7 +2,7 @@ function pressButton($node){
     const previousClassName = $node.className;
     $node.className = "selected";
     
-    setTimeout(() => {$node.className = previousClassName}, 1000);
+    setTimeout(() => {$node.className = previousClassName}, 500);
    
     return false;
 }

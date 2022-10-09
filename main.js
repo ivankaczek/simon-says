@@ -35,7 +35,7 @@ function startGame(event){
 }
 
 function hiddeStartButton(){
-    $buttonStart.className = "hidden";
+    $buttonStart.className  = "hidden";
 }
 
 function nextStep(){
