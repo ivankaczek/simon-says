@@ -6,6 +6,7 @@ const $button04 = document.querySelector('#button04');
 let correctSequence = [];
 let userSequence = [];
 let keepGoing = true;
+let counter = 0;
 
 function startGame(event){
     
@@ -14,11 +15,18 @@ function startGame(event){
     correctSequence.push(nextInSequence);
     console.log(`the correct sequence is ${correctSequence}`);
     */
-   let sequence = [2,3,4,1,2];
+   //let sequence = generateRandomSequence(5);
    //pressButtonN(2);
-    showSequenceOfButtons(sequence);
+    //showSequenceOfButtons(sequence);
+    /*
+    let newSequence = generateRandomSequence(3);
+    console.log(newSequence);
+    */
+    counter++;
+     correctSequence = addNextRandomNumber1to4(correctSequence);
+     showSequenceOfButtons(correctSequence)    ;
 
-    
+
     event.preventDefault();
 }
 
@@ -60,7 +68,7 @@ function chooseButton04(event){
 }
 
 function pressRandomButton(){
-    const randomNum = randomNumber();
+    const randomNum = randomNumber1to4();
     if (randomNum === 1){
         pressButton($button01);
     } else if (randomNum === 2) {
@@ -85,26 +93,7 @@ function pressButtonN(n){
     }
 }
 
-function showSequenceOfButtons(sequence){
-    console.log(sequence);
-    for (let i = 0; i < sequence.length; i++) {
-        let nextNumber = sequence[i];
-        let delay = 2000*(i+1);
-        setTimeout(() => {pressButtonN(sequence[i])}, delay);
-        
-    }
-}
 
-function isTheSameSequence(numbers01,numbers02){
-    let isTheSame = true;
-    for (let i = 0; i < numbers01.length; i++) {
-        if(numbers01[i]!==numbers02[i]){
-            isTheSame = false;
-        }
-      }
-    return isTheSame;
- 
-}
 
 $buttonStart.onclick = startGame;
 $button01.onclick = chooseButton01;
