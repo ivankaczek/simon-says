@@ -56,3 +56,8 @@ function addNextRandomNumber1to4(sequence){
     sequence.push(nextNumber2add);
     return sequence;
 }
+
+function restartUserSequence(sequence){
+    sequence = [];
+    return sequence;
+}

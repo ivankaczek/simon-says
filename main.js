@@ -7,6 +7,7 @@ let correctSequence = [];
 let userSequence = [];
 let keepGoing = true;
 let counter = 0;
+let clicksLeft = 0;
 
 function startGame(event){
     
@@ -23,17 +24,20 @@ function startGame(event){
     console.log(newSequence);
     */
     counter++;
-     correctSequence = addNextRandomNumber1to4(correctSequence);
-     showSequenceOfButtons(correctSequence)    ;
-
-
+    correctSequence = addNextRandomNumber1to4(correctSequence);
+    showSequenceOfButtons(correctSequence);
+    userSequence = restartUserSequence(userSequence);
+    //console.log(`the counter is ${counter}`);
     event.preventDefault();
 }
 
 function chooseButton01(event){
 
+
 userSequence.push(1);
 console.log(`the user sequence is ${userSequence}`);
+clicksLeft = counter -1;
+console.log(`you have ${clicksLeft} clicks to finish recording`);
 keepGoing = isTheSameSequence(userSequence,correctSequence);
 console.log(keepGoing);
 event.preventDefault();
@@ -43,6 +47,8 @@ function chooseButton02(event){
 
     userSequence.push(2);
     console.log(`the user sequence is ${userSequence}`);
+    clicksLeft = counter -1;
+console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
     event.preventDefault();
@@ -52,6 +58,8 @@ function chooseButton03(event){
 
     userSequence.push(3);
     console.log(`the user sequence is ${userSequence}`);
+    clicksLeft = counter -1;
+console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
 
@@ -62,6 +70,8 @@ function chooseButton04(event){
 
     userSequence.push(4);
     console.log(`the user sequence is ${userSequence}`);
+    clicksLeft = counter -1;
+console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
     event.preventDefault();
