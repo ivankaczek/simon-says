@@ -3,6 +3,8 @@ const $button01 = document.querySelector('#button01');
 const $button02 = document.querySelector('#button02');
 const $button03 = document.querySelector('#button03');
 const $button04 = document.querySelector('#button04');
+const $areaWithButtons = document.querySelector('#area-with-buttons');
+const $errorMessage = document.querySelector('#error-message');
 let correctSequence = [];
 let userSequence = [];
 let keepGoing = true;
@@ -10,6 +12,7 @@ let counter = 0;
 let clicksLeft = 0;
 let clicksDone = 0;
 let playNextRound = true;
+
 
 function startGame(event){
     
@@ -26,8 +29,13 @@ function startGame(event){
     console.log(newSequence);
     */
    nextStep();
+   hiddeStartButton();
    
     event.preventDefault();
+}
+
+function hiddeStartButton(){
+    $buttonStart.className = "hidden";
 }
 
 function nextStep(){
@@ -39,70 +47,60 @@ function nextStep(){
     clicksDone = 0;
 }
 
+function recordUserSequence(){
+    clicksDone++;
+    if(clicksDone === counter){
+        console.log(`the user sequence is ${userSequence}`);
+        setTimeout(() => {nextStep()}, 2000);
+    }
+    clicksLeft = counter -clicksDone;
+    console.log(`you have ${clicksLeft} clicks to finish recording`);
+    keepGoing = isTheSameSequence(userSequence,correctSequence);
+    if(!keepGoing){
+        showErrorMessage();
+    }
+    console.log(keepGoing);
+
+}
+
+function showErrorMessage(){
+    $areaWithButtons.className = "hidden";
+    $errorMessage.className = "";
+
+}
 
 function chooseButton01(event){
-
-
 userSequence.push(1);
+recordUserSequence();
 
-clicksDone++;
-if(clicksDone === counter){
-    console.log(`the user sequence is ${userSequence}`);
-    setTimeout(() => {nextStep()}, 2000);
-}
-clicksLeft = counter -clicksDone;
-console.log(`you have ${clicksLeft} clicks to finish recording`);
-keepGoing = isTheSameSequence(userSequence,correctSequence);
-console.log(keepGoing);
+
 event.preventDefault();
 }
 
 function chooseButton02(event){
 
     userSequence.push(2);
-    //console.log(`the user sequence is ${userSequence}`);
-    clicksDone++;
-    if(clicksDone === counter){
-        console.log(`the user sequence is ${userSequence}`);
-        setTimeout(() => {nextStep()}, 2000);
-    }
-clicksLeft = counter -clicksDone;
-console.log(`you have ${clicksLeft} clicks to finish recording`);
-    keepGoing = isTheSameSequence(userSequence,correctSequence);
-    console.log(keepGoing);
+    recordUserSequence();
+
+
     event.preventDefault();
 }
 
 function chooseButton03(event){
 
     userSequence.push(3);
-    //console.log(`the user sequence is ${userSequence}`);
-    clicksDone++;
-    if(clicksDone === counter){
-        console.log(`the user sequence is ${userSequence}`);
-        setTimeout(() => {nextStep()}, 2000);
-    }
-clicksLeft = counter -clicksDone;
-console.log(`you have ${clicksLeft} clicks to finish recording`);
-    keepGoing = isTheSameSequence(userSequence,correctSequence);
-    console.log(keepGoing);
+    recordUserSequence();
 
+   
     event.preventDefault();
 }
 
 function chooseButton04(event){
 
     userSequence.push(4);
-    //console.log(`the user sequence is ${userSequence}`);
-    clicksDone++;
-    if(clicksDone === counter){
-        console.log(`the user sequence is ${userSequence}`);
-        setTimeout(() => {nextStep()}, 2000);
-    }
-clicksLeft = counter -clicksDone;
-console.log(`you have ${clicksLeft} clicks to finish recording`);
-    keepGoing = isTheSameSequence(userSequence,correctSequence);
-    console.log(keepGoing);
+    recordUserSequence();
+
+
     event.preventDefault();
 }
 
