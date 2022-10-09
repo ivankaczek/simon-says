@@ -13,3 +13,8 @@ I need a function that shows that this button should be pressed. Then I need ano
 Function #1: select a Button.
 
 This function changes the class of the button for a few seconds in order to indicate that this button should be pressed
+
+Development
+
+Now I need to discover how the machine will use the counter to show a sequence of n-steps
+and then the user should repeate that sequence, and only after that will the machine restart
