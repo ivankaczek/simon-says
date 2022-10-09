@@ -21,7 +21,7 @@ function randomNumber1to4(){
 }
 
 function showSequenceOfButtons(sequence){
-    console.log(sequence);
+    console.log(`the correct sequence is ${sequence}`);
     for (let i = 0; i < sequence.length; i++) {
         let nextNumber = sequence[i];
         let delay = 2000*(i+1);

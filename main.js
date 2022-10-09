@@ -8,6 +8,7 @@ let userSequence = [];
 let keepGoing = true;
 let counter = 0;
 let clicksLeft = 0;
+let clicksDone = 0;
 
 function startGame(event){
     
@@ -28,6 +29,7 @@ function startGame(event){
     showSequenceOfButtons(correctSequence);
     userSequence = restartUserSequence(userSequence);
     //console.log(`the counter is ${counter}`);
+    clicksDone = 0;
     event.preventDefault();
 }
 
@@ -35,8 +37,12 @@ function chooseButton01(event){
 
 
 userSequence.push(1);
-console.log(`the user sequence is ${userSequence}`);
-clicksLeft = counter -1;
+
+clicksDone++;
+if(clicksDone === counter){
+    console.log(`the user sequence is ${userSequence}`);
+}
+clicksLeft = counter -clicksDone;
 console.log(`you have ${clicksLeft} clicks to finish recording`);
 keepGoing = isTheSameSequence(userSequence,correctSequence);
 console.log(keepGoing);
@@ -46,8 +52,12 @@ event.preventDefault();
 function chooseButton02(event){
 
     userSequence.push(2);
-    console.log(`the user sequence is ${userSequence}`);
-    clicksLeft = counter -1;
+    //console.log(`the user sequence is ${userSequence}`);
+    clicksDone++;
+    if(clicksDone === counter){
+        console.log(`the user sequence is ${userSequence}`);
+    }
+clicksLeft = counter -clicksDone;
 console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
@@ -57,8 +67,12 @@ console.log(`you have ${clicksLeft} clicks to finish recording`);
 function chooseButton03(event){
 
     userSequence.push(3);
-    console.log(`the user sequence is ${userSequence}`);
-    clicksLeft = counter -1;
+    //console.log(`the user sequence is ${userSequence}`);
+    clicksDone++;
+    if(clicksDone === counter){
+        console.log(`the user sequence is ${userSequence}`);
+    }
+clicksLeft = counter -clicksDone;
 console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
@@ -69,8 +83,12 @@ console.log(`you have ${clicksLeft} clicks to finish recording`);
 function chooseButton04(event){
 
     userSequence.push(4);
-    console.log(`the user sequence is ${userSequence}`);
-    clicksLeft = counter -1;
+    //console.log(`the user sequence is ${userSequence}`);
+    clicksDone++;
+    if(clicksDone === counter){
+        console.log(`the user sequence is ${userSequence}`);
+    }
+clicksLeft = counter -clicksDone;
 console.log(`you have ${clicksLeft} clicks to finish recording`);
     keepGoing = isTheSameSequence(userSequence,correctSequence);
     console.log(keepGoing);
